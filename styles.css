@@ -1,9 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quattrocento&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Quattrocento', serif;
+    font-family: 'Copperplate Gothic', 'Quattrocento', serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -11,22 +14,33 @@ body {
     background-color: #fff;
 }
 
+a {
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent */
+}
+
+a:hover {
+    color: #007BFF; /* Optional: Change color on hover */
+}
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    box-shadow: none;
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
     background-color: #fff;
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     color: #333;
 }
 
 header h1 {
     margin: 0;
     font-size: 1.5em;
+    font-family: 'Quantico', sans-serif;
 }
 
 nav {
@@ -38,15 +52,16 @@ nav ul {
     justify-content: center;
     padding: 0;
     list-style: none;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 nav ul li {
-    margin: 0 20px;
+    margin: 0 10px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #333;
+    color: inherit;
     font-weight: bold;
     font-size: 0.9em;
     transition: color 0.3s;
@@ -58,17 +73,17 @@ nav ul li a:hover {
     color: #007BFF;
 }
 
-section {
+#content {
+    padding-top: 80px; /* Space for fixed header */
+}
+
+.tab-content {
+    display: block;
     padding: 60px;
     margin: 40px auto;
     max-width: 900px;
-    transition: transform 0.3s;
     text-align: center;
     background-color: #fff;
-}
-
-section:hover {
-    transform: none;
 }
 
 h1 {
@@ -92,10 +107,6 @@ h3 {
 p {
     font-size: 1em;
     margin-bottom: 8px;
-}
-
-h1, h2 {
-    color: #444;
 }
 
 .logo {
@@ -131,31 +142,6 @@ h1, h2 {
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 0, 0, 0.5);
 }
 
-.tab-content {
-    display: none;
-}
-
-.tab-content.active {
-    display: block;
-}
-
-a[href^="mailto"] {
-    color: #333;
-    text-decoration: none;
-}
-
-a[href^="mailto"]:hover {
-    color: #007BFF;
-}
-
-a[href^="https://www.tiktok.com"], a[href^="https://www.instagram.com"] {
-    color: #000;
-}
-
-a[href^="https://www.tiktok.com"]:hover, a[href^="https://www.instagram.com"]:hover {
-    color: #007BFF;
-}
-
 .project-logo {
     display: block;
     max-width: 100%;
@@ -171,115 +157,43 @@ a[href^="https://www.tiktok.com"]:hover, a[href^="https://www.instagram.com"]:ho
     transform: scale(1.05);
 }
 
-.project-item {
-    text-align: center;
-    margin-bottom: 20px;
-    background: none;
-    border: none;
-}
-
-.project-item h3 {
-    font-size: 1.5em;
-    margin-top: 10px;
-}
-
-.project-item a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.project-item p {
-    display: none;
-}
-
-.back-button {
-    padding: 15px 30px;
-    border-radius: 15px;
-    background-color: #ddd;
-    color: #333;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    margin-left: 0;
-    text-align: left;
-    font-family: 'Quattrocento', serif;
-    display: block;
-}
-
-.back-button:hover {
-    background-color: #bbb;
-}
-
-.no-underline {
-    text-decoration: none;
-    color: inherit;
-}
-
-.about-content {
+footer {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-}
-
-.about-image {
-    width: 45%;
-    border-radius: 15px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.about-image:hover {
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.9), 0 0 80px rgba(0, 0, 0, 0.7);
-    transform: scale(1.05);
-}
-
-.about-text {
-    width: 50%;
+    background-color: #f1f1f1;
     padding: 20px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.home-logo {
-    max-width: 500px;
-    height: auto;
-    margin: 40px auto;
-    border-radius: 15px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.home-logo:hover {
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.9), 0 0 80px rgba(0, 0, 0, 0.7);
-    transform: scale(1.05);
-}
-
-#about {
-    margin-top: 20px;
-}
-
-.store-logos {
+footer form {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
 }
 
-.store-logo {
-    width: 120px;
-    height: auto;
-    margin: 10px;
-    display: inline-block;
+footer input[type="email"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 200px;
 }
 
-.company-logo {
-    display: block;
-    max-width: 150px;
-    height: auto;
-    margin: 0 auto;
+footer input[type="submit"] {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.about-us-photo {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    display: block;
-    margin: 20px auto;
+footer input[type="submit"]:hover {
+    background-color: #0056b3;
 }
 
 @media (max-width: 768px) {
@@ -294,62 +208,6 @@ a[href^="https://www.tiktok.com"]:hover, a[href^="https://www.instagram.com"]:ho
     nav ul li {
         margin: 10px 0;
     }
-    .about-content {
-        flex-direction: column;
-    }
-    .about-image, .about-text {
-        width: 100%;
-    }
-}
-
-button, input[type="submit"] {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-}
-
-button:hover, input[type="submit"]:hover {
-    background-color: #0056b3;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 0, 0, 0.5);
-}
-
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 40px;
-    background-color: transparent !important;
-    box-shadow: none !important;
-}
-
-.contact-form input, .contact-form textarea {
-    border: none;
-    border-bottom: 1px solid #ccc;
-    border-radius: 0;
-    background-color: transparent !important;
-    box-shadow: none !important;
-}
-
-.contact-form input:focus, .contact-form textarea:focus {
-    border-bottom: 1px solid #007BFF;
-}
-
-.contact-form input[type="submit"] {
-    background-color: transparent !important;
-    color: #007BFF;
-    border: none;
-    box-shadow: none !important;
-    border-bottom: 1px solid #007BFF;
-}
-
-.contact-form input[type="submit"]:hover {
-    background-color: transparent !important;
-    color: #0056b3;
-    border-bottom: 1px solid #0056b3;
 }
 
 .input-container {
@@ -360,13 +218,19 @@ button:hover, input[type="submit"]:hover {
 .input-container input,
 .input-container textarea {
     width: 100%;
-    padding: 10px 0;
-    border: none;
-    border-bottom: 1px solid #ccc;
-    border-radius: 0;
-    background-color: transparent;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
     font-size: 1em;
     color: #333;
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+.input-container input::placeholder,
+.input-container textarea::placeholder {
+    color: #aaa;
+    font-size: 0.9em;
 }
 
 .input-container label {
@@ -386,27 +250,6 @@ button:hover, input[type="submit"]:hover {
 .input-container textarea:not(:placeholder-shown) + label {
     transform: translateY(-20px);
     color: #007BFF;
-    animation: wave 0.5s ease-in-out forwards;
-}
-
-@keyframes wave {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-.input-container label {
-    animation: wave 0.5s ease-in-out;
-}
-
-.input-container input:focus + label,
-.input-container textarea:focus + label,
-.input-container input:not(:placeholder-shown) + label,
-.input-container textarea:not(:placeholder-shown) + label {
-    animation: wave 0.5s ease-in-out;
 }
 
 .btn {
@@ -455,4 +298,144 @@ button:hover, input[type="submit"]:hover {
 
 .icon i {
     color: #fff !important;
+}
+
+.coming-soon-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.coming-soon-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.coming-soon-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    pointer-events: none;
+    transform: scale(0);
+    transition: transform 0.5s, opacity 1s;
+    opacity: 0;
+}
+
+.coming-soon-button:active::after {
+    transform: scale(4);
+    opacity: 1;
+    transition: 0s;
+}
+
+.coming-soon-decor {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #333;
+    border-radius: 10px;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    margin: 20px auto;
+    cursor: default;
+}
+
+.coming-soon-decor:hover {
+    background-color: #444;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.project-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-item a:hover {
+    color: inherit;
+}
+
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.about-text {
+    max-width: 400px;
+    text-align: left;
+    font-size: 0.9em; /* Smaller font size */
+}
+
+.about-image-container {
+    position: relative;
+    max-width: 300px;
+}
+
+.about-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.about-image:hover {
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.9), 0 0 80px rgba(0, 0, 0, 0.7);
+    transform: scale(1.05);
+}
+
+.store-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between logos */
+    margin-top: 20px;
+}
+
+.store-logo {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.store-logo:hover {
+    transform: scale(1.1);
+}
+
+.home-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 0, 0, 0.5);
 }

@@ -8,8 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
+            font-family: 'Quattrocento', serif;
             margin: 0;
-            font-family: Arial, sans-serif;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
         }
 
         header {
@@ -119,87 +123,100 @@
         .contact-form input[type="submit"]:hover {
             background-color: #0056b3;
         }
+
+        #content {
+            padding-top: 100px; /* Increase padding to ensure content is not hidden by the header */
+        }
     </style>
 </head>
 <body>
-    <header id="main-header">
-        <h1><a href="#home" class="no-underline">DestinyX Studios</a></h1>
-        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <header>
+        <h1>DestinyX Studios</h1>
+        <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
         <nav id="nav-menu">
             <ul class="tabs">
-                <li><span class="tab-link active" data-tab="home">Home</span></li>
-                <li><span class="tab-link" data-tab="about">About Us</span></li>
-                <li><span class="tab-link" data-tab="projects">Projects</span></li>
-                <li><span class="tab-link" data-tab="games">Games</span></li>
-                <li><span class="tab-link" data-tab="social">Social Media</span></li>
-                <li><span class="tab-link" data-tab="contact">Contact</span></li>
+                <li><a href="#home" class="tab-link active">Home</a></li>
+                <li><a href="#about" class="tab-link">About Us</a></li>
+                <li><a href="#projects" class="tab-link">Projects</a></li>
+                <li><a href="#games" class="tab-link">Games</a></li>
+                <li><a href="#social" class="tab-link">Social Media</a></li>
+                <li><a href="#contact" class="tab-link">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <section id="home" class="tab-content active">
-        <h2>Welcome to DestinyX Studios</h2>
-        <img src="images/companylogo.png" alt="DestinyX Studios Logo" class="home-logo">
-        <h3>Background</h3>
-        <p>We are an app and game development studio based in San Jose, California, established in 2025. Our mission is to create innovative apps that entertain and connect people, fostering a community where individuals can share their passions.</p>
-        <p>Explore our projects or get in touch to learn more about our offerings.</p>
-    </section>
-    <section id="about" class="tab-content">
-        <h2>About Us</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <h3>Our Mission</h3>
-                <p>At DestinyX Studios, we are passionate about creating apps and games that not only entertain but also connect people worldwide. Our focus is on innovation, creativity, and community engagement.</p>
-                <h3>Our Story</h3>
-                <p>Founded as an LLC in California, DestinyX Studios was born from a deep passion for creating meaningful and entertaining digital experiences. Our goal is to develop products that are both helpful and engaging.</p>
-                <h3>About Me</h3>
-                <p>I'm an independent developer with an unwavering passion for app and game development. My journey is all about creativity and innovation, as I constantly strive to push the boundaries of technology. I dream of expanding my team and embracing cutting-edge advancements, committed to crafting experiences that captivate and connect.</p>
+    <div id="content">
+        <section id="home" class="tab-content">
+            <img src="images/companylogo.png" alt="DestinyX Studios Logo" class="home-logo">
+            <h3>Background</h3>
+            <p>We are an app and game development studio based in San Jose, California, established in 2025. Our mission is to create innovative apps that entertain and connect people, fostering a community where individuals can share their passions.</p>
+            <p>Explore our projects or get in touch to learn more about our offerings.</p>
+        </section>
+        <section id="about" class="tab-content">
+            <h2>About Us</h2>
+            <div class="about-section">
+                <div class="about-text">
+                    <h3>Who I Am</h3>
+                    <p>I'm an independent developer with a passion for app and game development. My journey is all about creativity and innovation, constantly pushing the boundaries of technology.</p>
+                    <h3>My Goals</h3>
+                    <p>I aim to expand my team and embrace cutting-edge advancements, committed to crafting experiences that captivate and connect.</p>
+                    <h3>Our Mission</h3>
+                    <p>At DestinyX Studios, we strive to create apps and games that entertain and foster a community where individuals can share their passions.</p>
+                </div>
+                <div class="about-image-container">
+                    <img src="images/yo.JPG" alt="About Us Image" class="about-image">
+                </div>
             </div>
-            <img src="images/yo.JPG" alt="About Us Image" class="about-image">
-        </div>
-    </section>
-    <section id="projects" class="tab-content">
-        <h2>Our Projects</h2>
-        <div class="project-item" id="idol-pulse">
-            <a href="idol-pulse-description.html" target="_blank">
-                <img src="images/idolpulselogo.PNG" alt="Idol Pulse Logo" class="project-logo">
-                <h3>Idol Pulse</h3>
-            </a>
-        </div>
-    </section>
-    <section id="games" class="tab-content">
-        <h2 style="text-align: center; font-size: 3em; margin-top: 100px;">Games Coming Soon</h2>
-    </section>
-    <section id="social" class="tab-content">
-        <h2>Follow Us</h2>
-        <p>Connect with us on social media platforms.</p>
-        <div class="icon-container">
-            <a href="https://www.instagram.com/destinyx_studios/" class="icon instagram"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.twitter.com/yourprofile" class="icon twitter"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.tiktok.com/@destinyxstudios" class="icon tiktok"><i class="fab fa-tiktok"></i></a>
-        </div>
-    </section>
-    <section id="contact" class="tab-content">
-        <h2>Contact Us</h2>
-        <p>If you have any questions or need assistance, please feel free to contact us:</p>
-        <div class="contact-form">
-            <form action="#" method="post">
-                <div class="input-container">
-                    <input type="text" id="name" name="name" required>
-                    <label for="name">Name</label>
-                </div>
-                <div class="input-container">
-                    <input type="email" id="email" name="email" required>
-                    <label for="email">Email</label>
-                </div>
-                <div class="input-container">
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                    <label for="message">Message</label>
-                </div>
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-    </section>
-    <div class="spacer"></div>
+        </section>
+        <section id="projects" class="tab-content">
+            <h2>Our Projects</h2>
+            <div class="project-item">
+                <a href="idol-pulse-description.html">
+                    <img src="images/idolpulselogo.PNG" alt="Idol Pulse Logo" class="project-logo">
+                    <h3>Idol Pulse</h3>
+                </a>
+            </div>
+        </section>
+        <section id="games" class="tab-content">
+            <h2>Video Game Projects</h2>
+            <div class="coming-soon-decor">Games Coming Soon</div>
+        </section>
+        <section id="social" class="tab-content">
+            <h2>Follow Us</h2>
+            <p>Connect with us on social media platforms.</p>
+            <div class="icon-container">
+                <a href="https://www.instagram.com/destinyx_studios/" class="icon instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.twitter.com/yourprofile" class="icon twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.tiktok.com/@destinyxstudios" class="icon tiktok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </section>
+        <section id="contact" class="tab-content">
+            <h2>Contact</h2>
+            <p>We'd love to hear from you! Share your ideas, thoughts, or any questions you might have.</p>
+            <div class="contact-form">
+                <form action="#" method="post">
+                    <div class="input-container">
+                        <input type="text" id="name" name="name" required placeholder="Name">
+                    </div>
+                    <div class="input-container">
+                        <input type="email" id="email" name="email" required placeholder="Email">
+                    </div>
+                    <div class="input-container">
+                        <textarea id="message" name="message" rows="4" required placeholder="Message"></textarea>
+                    </div>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </section>
+        <section id="idol-pulse" class="tab-content">
+            <h2>IdolPulse</h2>
+            <p>The Ultimate K-Pop Stan Hub</p>
+            <div class="store-logos">
+                <img src="images/appstore.png" alt="App Store Logo" class="store-logo">
+                <img src="images/playstore.png" alt="Play Store Logo" class="store-logo">
+            </div>
+            <a href="#home" class="home-button">Home</a>
+        </section>
+    </div>
     <footer>
         <div class="company-info">
             <p>DestinyX Studios LLC, Established 2025</p>
@@ -208,56 +225,12 @@
             <h3>Sign Up for Our Newsletter</h3>
             <form action="#" method="post">
                 <label for="newsletter-email">Email:</label>
-                <input type="email" id="newsletter-email" name="newsletter-email" required><br>
+                <input type="email" id="newsletter-email" name="newsletter-email" required>
                 <input type="submit" value="Sign Up">
             </form>
         </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="scripts.js"></script>
-    <script>
-        document.querySelectorAll('.btn').forEach(button => {
-            button.addEventListener('click', function (e) {
-                const rect = this.getBoundingClientRect();
-                const ripple = document.createElement('span');
-                ripple.style.width = ripple.style.height = Math.max(rect.width, rect.height) + 'px';
-                ripple.style.left = e.clientX - rect.left - ripple.offsetWidth / 2 + 'px';
-                ripple.style.top = e.clientY - rect.top - ripple.offsetHeight / 2 + 'px';
-                ripple.classList.add('ripple');
-                this.appendChild(ripple);
-                setTimeout(() => ripple.remove(), 600);
-            });
-        });
-
-        let lastScrollTop = 0;
-        const header = document.getElementById('main-header');
-
-        window.addEventListener('scroll', function() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollTop > lastScrollTop) {
-                header.style.top = '-100px'; // Hide header
-            } else {
-                header.style.top = '0'; // Show header
-            }
-            lastScrollTop = scrollTop;
-        });
-
-        function toggleMenu() {
-            const navMenu = document.getElementById('nav-menu');
-            if (navMenu.style.display === 'flex') {
-                navMenu.style.display = 'none';
-            } else {
-                navMenu.style.display = 'flex';
-            }
-        }
-
-        document.querySelectorAll('.tab-link').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('nav-menu').style.display = 'none';
-            });
-        });
-    </script>
 </body>
 </html>
 
