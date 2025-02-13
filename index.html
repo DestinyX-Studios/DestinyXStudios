@@ -6,6 +6,67 @@
     <title>DestinyX Studios</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centers the logo and nav */
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center; /* Centers the tabs */
+            margin-top: 20px; /* Adds space between the logo and tabs */
+        }
+
+        .tabs {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+
+        .tabs li {
+            margin-left: 20px; /* Adds space between tabs */
+        }
+
+        .tab-link {
+            padding: 5px 10px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: #000; /* Change text color to black */
+            transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: none; /* Remove box-shadow */
+            background-color: transparent; /* Remove background color */
+        }
+
+        .tab-link:hover {
+            color: #fff; /* Change hover text color to white */
+            transform: scale(1.1);
+        }
+
+        /* Media Queries for Mobile */
+        @media (max-width: 768px) {
+            .tabs {
+                flex-direction: column; /* Stack tabs vertically */
+                align-items: center;
+            }
+
+            .tabs li {
+                margin: 10px 0; /* Add vertical spacing */
+            }
+
+            .home-logo {
+                max-width: 100%; /* Ensure logo scales */
+                height: auto;
+            }
+
+            h1, h2, h3, p {
+                text-align: center; /* Center text for better readability */
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -23,7 +84,7 @@
     </header>
     <section id="home" class="tab-content active">
         <h2>Welcome to DestinyX Studios</h2>
-        <img src="images/DestinyX Studios Logo.PNG" alt="DestinyX Studios Logo" class="home-logo">
+        <img src="images/companylogo.PNG" alt="DestinyX Studios Logo" class="home-logo">
         <h3>Background</h3>
         <p>We are an app and game development studio based in San Jose, California, established in 2025. Our mission is to create innovative apps that entertain and connect people, fostering a community where individuals can share their passions.</p>
         <p>Explore our projects or get in touch to learn more about our offerings.</p>
@@ -242,16 +303,15 @@
     .tab-link {
         padding: 5px 10px;
         border-radius: 10px;
-        background-color: #444;
         text-decoration: none;
-        color: #e0e0e0;
-        transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        color: #000; /* Change text color to black */
+        transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
+        box-shadow: none; /* Remove box-shadow */
+        background-color: transparent; /* Remove background color */
     }
     .tab-link:hover {
-        background-color: #666;
+        color: #fff; /* Change hover text color to white */
         transform: scale(1.1);
-        box-shadow: 0 0 25px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 0, 0, 0.5);
     }
     button, input[type="submit"] {
         background-color: #007BFF;
