@@ -153,7 +153,7 @@ p {
 }
 
 .project-logo:hover {
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.9), 0 0 80px rgba(0, 0, 0, 0.7);
+    box-shadow: none; /* Remove shadow to eliminate black bars */
     transform: scale(1.05);
 }
 
@@ -438,4 +438,13 @@ footer input[type="submit"]:hover {
     background-color: #0056b3;
     transform: scale(1.1);
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 0, 0, 0.5);
+}
+
+.header-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header-link:hover {
+    color: #007BFF; /* Optional: Add a hover effect */
 }

@@ -69,9 +69,16 @@ document.querySelectorAll('.tab-link').forEach(function(link) {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        const offset = 80; // Adjust this value to match your header height
+
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - offset,
+                behavior: 'smooth'
+            });
+        }
     });
 });
 

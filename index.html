@@ -131,7 +131,7 @@
 </head>
 <body>
     <header>
-        <h1>DestinyX Studios</h1>
+        <h1><a href="#home" class="header-link">DestinyX Studios</a></h1>
         <span class="menu-icon" onclick="toggleMenu()">&#9776;</span>
         <nav id="nav-menu">
             <ul class="tabs">
@@ -156,14 +156,16 @@
             <div class="about-section">
                 <div class="about-text">
                     <h3>Who I Am</h3>
-                    <p>I'm an independent developer with a passion for app and game development. My journey is all about creativity and innovation, constantly pushing the boundaries of technology.</p>
-                    <h3>My Goals</h3>
-                    <p>I aim to expand my team and embrace cutting-edge advancements, committed to crafting experiences that captivate and connect.</p>
+                    <p>Hello! I'm an independent creator with a deep passion for innovation. I was born in Colombia and currently live in Silicon Valley. I've always had a passion for games and apps, which sparked an interest in me to start creating. I've often had ideas or features I wished apps or games had, so I decided to bring those imaginative concepts to life.</p>
+                    <h3>My Focus</h3>
+                    <p>My focus is on developing engaging and user-friendly applications that connect people, share moments, and create entertaining experiences.</p>
+                    <h3>My Objectives</h3>
+                    <p>My objectives include expanding my team, embracing cutting-edge advancements, and crafting experiences that captivate and connect users worldwide.</p>
                     <h3>Our Mission</h3>
-                    <p>At DestinyX Studios, we strive to create apps and games that entertain and foster a community where individuals can share their passions.</p>
+                    <p>At DestinyX Studios, we strive to create apps and games that entertain and foster a community where individuals can share their passions and enjoy memorable moments together.</p>
                 </div>
                 <div class="about-image-container">
-                    <img src="images/yo.JPG" alt="About Us Image" class="about-image">
+                    <img src="images/yo.jpg" alt="About Us Image" class="about-image">
                 </div>
             </div>
         </section>
@@ -171,7 +173,7 @@
             <h2>Our Projects</h2>
             <div class="project-item">
                 <a href="idol-pulse-description.html">
-                    <img src="images/idolpulselogo.PNG" alt="Idol Pulse Logo" class="project-logo">
+                    <img src="images/idolpulselogo.png" alt="Idol Pulse Logo" class="project-logo">
                     <h3>Idol Pulse</h3>
                 </a>
             </div>
@@ -206,15 +208,6 @@
                     <input type="submit" value="Submit">
                 </form>
             </div>
-        </section>
-        <section id="idol-pulse" class="tab-content">
-            <h2>IdolPulse</h2>
-            <p>The Ultimate K-Pop Stan Hub</p>
-            <div class="store-logos">
-                <img src="images/appstore.png" alt="App Store Logo" class="store-logo">
-                <img src="images/playstore.png" alt="Play Store Logo" class="store-logo">
-            </div>
-            <a href="#home" class="home-button">Home</a>
         </section>
     </div>
     <footer>
@@ -400,10 +393,11 @@
         margin: 20px auto;
         width: 300px;
         border-radius: 15px;
-        transition: box-shadow 0.3s ease, transform 0.3s ease;
+        transition: transform 0.3s ease;
+        box-shadow: none;
+        border: none;
     }
     .project-logo:hover {
-        box-shadow: 0 0 40px rgba(0, 0, 0, 0.9), 0 0 80px rgba(0, 0, 0, 0.7);
         transform: scale(1.05);
     }
     .input-container {
