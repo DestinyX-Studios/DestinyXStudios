@@ -17,14 +17,15 @@
             display: flex;
             justify-content: center; /* Centers the tabs */
             margin-top: 20px; /* Adds space between the logo and tabs */
+            overflow-x: auto; /* Allow horizontal scrolling */
+            white-space: nowrap; /* Prevent line breaks */
         }
 
         .tabs {
             list-style: none;
             padding: 0;
             margin: 0;
-            display: flex;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            display: inline-flex; /* Inline flex for horizontal scrolling */
         }
 
         .tabs li {
@@ -48,13 +49,12 @@
 
         /* Media Queries for Mobile */
         @media (max-width: 768px) {
-            .tabs {
-                flex-direction: column; /* Stack tabs vertically */
-                align-items: center;
+            header nav {
+                justify-content: flex-start; /* Align to start for scrolling */
             }
 
             .tabs li {
-                margin: 10px 0; /* Add vertical spacing */
+                margin-left: 10px; /* Reduce space for mobile */
             }
 
             .home-logo {
@@ -69,7 +69,7 @@
     </style>
 </head>
 <body>
-    <header>
+    <header id="main-header">
         <h1><a href="#home" class="no-underline">DestinyX Studios</a></h1>
         <nav>
             <ul class="tabs">
@@ -174,6 +174,19 @@
                 this.appendChild(ripple);
                 setTimeout(() => ripple.remove(), 600);
             });
+        });
+
+        let lastScrollTop = 0;
+        const header = document.getElementById('main-header');
+
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                header.style.top = '-100px'; // Hide header
+            } else {
+                header.style.top = '0'; // Show header
+            }
+            lastScrollTop = scrollTop;
         });
     </script>
 </body>
