@@ -448,3 +448,11 @@ button:hover, input[type="submit"]:hover {
     opacity: 1;
     transition: 0s;
 }
+
+.icon {
+    color: #fff;
+}
+
+.icon i {
+    color: #fff !important;
+}
