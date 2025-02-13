@@ -57,21 +57,29 @@
     <section id="social" class="tab-content">
         <h2>Follow Us</h2>
         <p>Connect with us on social media platforms.</p>
-        <p><i class="fab fa-tiktok"></i> TikTok: <a href="https://www.tiktok.com/@destinyxstudios" target="_blank">@destinyxstudios</a></p>
-        <p><i class="fab fa-instagram"></i> Instagram: <a href="https://www.instagram.com/destinyxstudios" target="_blank">@destinyxstudios</a></p>
+        <div class="icon-container">
+            <a href="#" class="icon instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="icon twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="icon tiktok"><i class="fab fa-tiktok"></i></a>
+        </div>
     </section>
     <section id="contact" class="tab-content">
         <h2>Contact Us</h2>
         <p>If you have any questions or need assistance, please feel free to contact us:</p>
         <div class="contact-form">
-            <h3>Contact Us</h3>
             <form action="#" method="post">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required><br>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br>
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="4" required></textarea><br>
+                <div class="input-container">
+                    <input type="text" id="name" name="name" required>
+                    <label for="name">Name</label>
+                </div>
+                <div class="input-container">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-container">
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <label for="message">Message</label>
+                </div>
                 <input type="submit" value="Submit">
             </form>
         </div>
@@ -93,6 +101,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
     <script src="scripts.js"></script>
+    <script>
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function (e) {
+                const rect = this.getBoundingClientRect();
+                const ripple = document.createElement('span');
+                ripple.style.width = ripple.style.height = Math.max(rect.width, rect.height) + 'px';
+                ripple.style.left = e.clientX - rect.left - ripple.offsetWidth / 2 + 'px';
+                ripple.style.top = e.clientY - rect.top - ripple.offsetHeight / 2 + 'px';
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+    </script>
 </body>
 </html>
 
@@ -191,5 +213,151 @@
         max-width: 150px;
         height: auto;
         margin: 0 auto;
+    }
+    .icon-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .icon {
+        margin: 10px;
+        border-radius: 50%;
+        box-sizing: border-box;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        transition: 0.3s ease;
+        font-size: 2rem;
+        color: #fff;
+        background-color: #333;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+    .icon:hover {
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 0, 0, 0.5);
+    }
+    .tab-link {
+        padding: 5px 10px;
+        border-radius: 10px;
+        background-color: #444;
+        text-decoration: none;
+        color: #e0e0e0;
+        transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+    .tab-link:hover {
+        background-color: #666;
+        transform: scale(1.1);
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 0, 0, 0.5);
+    }
+    button, input[type="submit"] {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s, box-shadow 0.3s;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+    button:hover, input[type="submit"]:hover {
+        background-color: #0056b3;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 0, 0, 0.5);
+    }
+    .home-logo {
+        max-width: 500px;
+        height: auto;
+        margin: 40px auto;
+        border-radius: 15px;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .home-logo:hover {
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.9), 0 0 80px rgba(0, 0, 0, 0.7);
+        transform: scale(1.05);
+    }
+    .project-logo {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 20px auto;
+        width: 300px;
+        border-radius: 15px;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .project-logo:hover {
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.9), 0 0 80px rgba(0, 0, 0, 0.7);
+        transform: scale(1.05);
+    }
+    .input-container {
+        position: relative;
+        margin-bottom: 20px;
+    }
+    .input-container input,
+    .input-container textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+    .input-container label {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        color: #aaa;
+        pointer-events: none;
+        transition: transform 0.3s, color 0.3s;
+    }
+    .input-container input:focus,
+    .input-container textarea:focus {
+        border-color: #007BFF;
+    }
+    .input-container input:focus + label,
+    .input-container textarea:focus + label,
+    .input-container input:not(:placeholder-shown) + label,
+    .input-container textarea:not(:placeholder-shown) + label {
+        transform: translateY(-20px);
+        color: #007BFF;
+    }
+    .btn {
+        position: relative;
+        overflow: hidden;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding: 16px 30px;
+        box-shadow: 5px 5px 10px #485460;
+        background-color: #007BFF;
+        border: none;
+        transition: background-color 0.3s;
+    }
+    .btn:hover {
+        background-color: #0056b3;
+    }
+    .btn::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(0);
+        transition: transform 0.5s, opacity 1s;
+        opacity: 0;
+    }
+    .btn:active::after {
+        transform: scale(4);
+        opacity: 1;
+        transition: 0s;
     }
 </style> 

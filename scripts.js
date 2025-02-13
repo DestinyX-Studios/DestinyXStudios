@@ -73,4 +73,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             behavior: 'smooth'
         });
     });
+});
+
+document.querySelectorAll('.btn').forEach(button => {
+    button.addEventListener('click', function (e) {
+        const rect = this.getBoundingClientRect();
+        const ripple = document.createElement('span');
+        ripple.style.width = ripple.style.height = Math.max(rect.width, rect.height) + 'px';
+        ripple.style.left = e.clientX - rect.left - ripple.offsetWidth / 2 + 'px';
+        ripple.style.top = e.clientY - rect.top - ripple.offsetHeight / 2 + 'px';
+        ripple.classList.add('ripple');
+        this.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
+    });
 }); 
