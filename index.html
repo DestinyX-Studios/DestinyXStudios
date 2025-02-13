@@ -7,63 +7,69 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
         header {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centers the logo and nav */
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            background-color: #fff;
+            z-index: 1000;
         }
 
-        header nav {
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        nav {
             display: flex;
-            justify-content: center; /* Centers the tabs */
-            margin-top: 20px; /* Adds space between the logo and tabs */
-            overflow-x: auto; /* Allow horizontal scrolling */
-            white-space: nowrap; /* Prevent line breaks */
+            justify-content: center;
+            margin-top: 20px;
+            overflow-x: auto;
+            white-space: nowrap;
         }
 
         .tabs {
             list-style: none;
             padding: 0;
             margin: 0;
-            display: inline-flex; /* Inline flex for horizontal scrolling */
+            display: inline-flex;
         }
 
         .tabs li {
-            margin-left: 20px; /* Adds space between tabs */
+            margin-left: 20px;
         }
 
         .tab-link {
             padding: 5px 10px;
-            border-radius: 10px;
             text-decoration: none;
-            color: #000; /* Change text color to black */
-            transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
-            box-shadow: none; /* Remove box-shadow */
-            background-color: transparent; /* Remove background color */
+            color: #000;
         }
 
-        .tab-link:hover {
-            color: #fff; /* Change hover text color to white */
-            transform: scale(1.1);
-        }
-
-        /* Media Queries for Mobile */
+        /* Mobile Styles */
         @media (max-width: 768px) {
-            header nav {
-                justify-content: flex-start; /* Align to start for scrolling */
+            .menu-icon {
+                display: block;
+            }
+
+            nav {
+                justify-content: flex-start;
+            }
+
+            .tabs {
+                display: inline-flex;
             }
 
             .tabs li {
-                margin-left: 10px; /* Reduce space for mobile */
-            }
-
-            .home-logo {
-                max-width: 100%; /* Ensure logo scales */
-                height: auto;
-            }
-
-            h1, h2, h3, p {
-                text-align: center; /* Center text for better readability */
+                margin-left: 10px;
             }
         }
     </style>
@@ -71,7 +77,8 @@
 <body>
     <header id="main-header">
         <h1><a href="#home" class="no-underline">DestinyX Studios</a></h1>
-        <nav>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav id="nav-menu">
             <ul class="tabs">
                 <li><span class="tab-link active" data-tab="home">Home</span></li>
                 <li><span class="tab-link" data-tab="about">About Us</span></li>
@@ -84,7 +91,7 @@
     </header>
     <section id="home" class="tab-content active">
         <h2>Welcome to DestinyX Studios</h2>
-        <img src="images/companylogo.PNG" alt="DestinyX Studios Logo" class="home-logo">
+        <img src="images/companylogo.png" alt="DestinyX Studios Logo" class="home-logo">
         <h3>Background</h3>
         <p>We are an app and game development studio based in San Jose, California, established in 2025. Our mission is to create innovative apps that entertain and connect people, fostering a community where individuals can share their passions.</p>
         <p>Explore our projects or get in touch to learn more about our offerings.</p>
@@ -100,14 +107,14 @@
                 <h3>About Me</h3>
                 <p>I'm an independent developer with an unwavering passion for app and game development. My journey is all about creativity and innovation, as I constantly strive to push the boundaries of technology. I dream of expanding my team and embracing cutting-edge advancements, committed to crafting experiences that captivate and connect.</p>
             </div>
-            <img src="images/Yo.JPG" alt="About Us Image" class="about-image">
+            <img src="images/yo.JPG" alt="About Us Image" class="about-image">
         </div>
     </section>
     <section id="projects" class="tab-content">
         <h2>Our Projects</h2>
         <div class="project-item" id="idol-pulse">
             <a href="idol-pulse-description.html" target="_blank">
-                <img src="images/IdolPulseLogo.png" alt="Idol Pulse Logo" class="project-logo">
+                <img src="images/idolpulselogo.PNG" alt="Idol Pulse Logo" class="project-logo">
                 <h3>Idol Pulse</h3>
             </a>
         </div>
@@ -188,6 +195,15 @@
             }
             lastScrollTop = scrollTop;
         });
+
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            if (navMenu.style.display === 'flex') {
+                navMenu.style.display = 'none';
+            } else {
+                navMenu.style.display = 'flex';
+            }
+        }
     </script>
 </body>
 </html>
