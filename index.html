@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DestinyX Studios</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1><a href="#home" class="no-underline">DestinyX Studios</a></h1>
+        <nav>
+            <ul class="tabs">
+                <li><span class="tab-link active" data-tab="home">Home</span></li>
+                <li><span class="tab-link" data-tab="about">About Us</span></li>
+                <li><span class="tab-link" data-tab="projects">Projects</span></li>
+                <li><span class="tab-link" data-tab="games">Games</span></li>
+                <li><span class="tab-link" data-tab="social">Social Media</span></li>
+                <li><span class="tab-link" data-tab="contact">Contact</span></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home" class="tab-content active">
+        <h2>Welcome to DestinyX Studios</h2>
+        <img src="images/DestinyX Studios Logo.PNG" alt="DestinyX Studios Logo" class="home-logo">
+        <h3>Background</h3>
+        <p>We are an app and game development studio based in San Jose, California, established in 2025. Our mission is to create innovative apps that entertain and connect people, fostering a community where individuals can share their passions.</p>
+        <p>Explore our projects or get in touch to learn more about our offerings.</p>
+    </section>
+    <section id="about" class="tab-content">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Our Mission</h3>
+                <p>At DestinyX Studios, we are passionate about creating apps and games that not only entertain but also connect people worldwide. Our focus is on innovation, creativity, and community engagement.</p>
+                <h3>Our Story</h3>
+                <p>Founded as an LLC in California, DestinyX Studios was born from a deep passion for creating meaningful and entertaining digital experiences. Our goal is to develop products that are both helpful and engaging.</p>
+                <h3>About Me</h3>
+                <p>I'm an independent developer with an unwavering passion for app and game development. My journey is all about creativity and innovation, as I constantly strive to push the boundaries of technology. I dream of expanding my team and embracing cutting-edge advancements, committed to crafting experiences that captivate and connect.</p>
+            </div>
+            <img src="images/Yo.JPG" alt="About Us Image" class="about-image">
+        </div>
+    </section>
+    <section id="projects" class="tab-content">
+        <h2>Our Projects</h2>
+        <div class="project-item" id="idol-pulse">
+            <a href="idol-pulse-description.html" target="_blank">
+                <img src="images/IdolPulseLogo.png" alt="Idol Pulse Logo" class="project-logo">
+                <h3>Idol Pulse</h3>
+            </a>
+        </div>
+    </section>
+    <section id="games" class="tab-content">
+        <h2 style="text-align: center; font-size: 3em; margin-top: 100px;">Games Coming Soon</h2>
+    </section>
+    <section id="social" class="tab-content">
+        <h2>Follow Us</h2>
+        <p>Connect with us on social media platforms.</p>
+        <p><i class="fab fa-tiktok"></i> TikTok: <a href="https://www.tiktok.com/@destinyxstudios" target="_blank">@destinyxstudios</a></p>
+        <p><i class="fab fa-instagram"></i> Instagram: <a href="https://www.instagram.com/destinyxstudios" target="_blank">@destinyxstudios</a></p>
+    </section>
+    <section id="contact" class="tab-content">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need assistance, please feel free to contact us:</p>
+        <div class="contact-form">
+            <h3>Contact Us</h3>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </section>
+    <div class="spacer"></div>
+    <footer>
+        <div class="company-info">
+            <p>DestinyX Studios LLC, Established 2025</p>
+        </div>
+        <div>
+            <h3>Sign Up for Our Newsletter</h3>
+            <form action="#" method="post">
+                <label for="newsletter-email">Email:</label>
+                <input type="email" id="newsletter-email" name="newsletter-email" required><br>
+                <input type="submit" value="Sign Up">
+            </form>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+<style>
+    .contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+        transition: transform 0.3s ease;
+    }
+    .contact-form:hover {
+        transform: scale(1.02);
+    }
+    .contact-form input, .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    .contact-form input[type="submit"] {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    .contact-form input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f1f1f1;
+        padding: 10px;
+        text-align: center;
+        position: relative;
+        width: 100%;
+        box-shadow: -2px -2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 0;
+        font-size: 0.7em;
+    }
+    footer .company-info {
+        display: block;
+        position: absolute;
+        left: 10px;
+        font-size: 0.7em;
+    }
+    footer form {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+    footer form:hover {
+        transform: scale(1.02);
+    }
+    footer input[type="email"] {
+        width: 60%;
+        margin-right: 5px;
+        font-size: 0.7em;
+        border-radius: 10px 0 0 10px;
+        border: 1px solid #ccc;
+        padding: 5px;
+    }
+    footer input[type="submit"] {
+        width: auto;
+        font-size: 0.7em;
+        border-radius: 0 10px 10px 0;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 5px 10px;
+        transition: background-color 0.3s ease;
+    }
+    footer input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    .spacer {
+        flex-grow: 1;
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    .company-logo {
+        display: block;
+        max-width: 150px;
+        height: auto;
+        margin: 0 auto;
+    }
+</style> 
