@@ -15,7 +15,7 @@
         header {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             position: fixed;
             width: 100%;
             background-color: #fff;
@@ -85,6 +85,23 @@
             padding: 10px;
             text-align: center;
             width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+
+        footer form {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        footer input[type="email"] {
+            width: 60%;
+            margin-right: 5px;
+        }
+
+        footer input[type="submit"] {
+            width: auto;
         }
 
         .contact-form input[type="submit"] {
@@ -234,6 +251,12 @@
                 navMenu.style.display = 'flex';
             }
         }
+
+        document.querySelectorAll('.tab-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-menu').style.display = 'none';
+            });
+        });
     </script>
 </body>
 </html>
