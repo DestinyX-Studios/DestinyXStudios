@@ -82,6 +82,36 @@
             color: #000;
         }
 
+        .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .about-text {
+            max-width: 400px;
+            text-align: left;
+            flex: 1; /* Allow text to take equal space */
+        }
+
+        .about-image-container {
+            max-width: 400px;
+            flex: 1; /* Allow image to take equal space */
+        }
+
+        .about-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .about-image:hover {
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.9), 0 0 80px rgba(0, 0, 0, 0.7);
+            transform: scale(1.05);
+        }
+
         /* Mobile Styles */
         @media (max-width: 768px) {
             header {
@@ -89,9 +119,8 @@
                 align-items: center;
             }
             nav ul {
-                flex-direction: row;
-                justify-content: center;
-                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: center;
             }
             .tab-content {
                 padding: 20px;
@@ -107,6 +136,7 @@
             }
             .about-text, .about-image-container {
                 max-width: 100%;
+                text-align: center;
             }
             .contact-form {
                 padding: 15px;
@@ -120,6 +150,12 @@
             }
             .key-points p {
                 font-size: 0.9em;
+            }
+            .tabs {
+                flex-wrap: wrap;
+            }
+            .tabs li {
+                margin: 5px 0;
             }
         }
 
@@ -181,6 +217,114 @@
 
         #content {
             padding-top: 100px; /* Increase padding to ensure content is not hidden by the header */
+        }
+
+        .home-logo {
+            max-width: 500px;
+            height: auto;
+            margin: 40px auto;
+            display: block;
+            border-radius: 15px;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .home-logo:hover {
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.9), 0 0 80px rgba(0, 0, 0, 0.7);
+            transform: scale(1.05);
+        }
+
+        .project-logo {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            width: 300px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            box-shadow: none;
+            border: none;
+        }
+
+        .project-logo:hover {
+            transform: scale(1.05);
+        }
+
+        .input-container {
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .input-container input,
+        .input-container textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .input-container label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: #aaa;
+            pointer-events: none;
+            transition: transform 0.3s, color 0.3s;
+        }
+
+        .input-container input:focus,
+        .input-container textarea:focus {
+            border-color: #007BFF;
+        }
+
+        .input-container input:focus + label,
+        .input-container textarea:focus + label,
+        .input-container input:not(:placeholder-shown) + label,
+        .input-container textarea:not(:placeholder-shown) + label {
+            transform: translateY(-20px);
+            color: #007BFF;
+        }
+
+        .btn {
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 16px 30px;
+            box-shadow: 5px 5px 10px #485460;
+            background-color: #007BFF;
+            border: none;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(0);
+            transition: transform 0.5s, opacity 1s;
+            opacity: 0;
+        }
+
+        .btn:active::after {
+            transform: scale(4);
+            opacity: 1;
+            transition: 0s;
         }
     </style>
 </head>
@@ -434,6 +578,7 @@
         max-width: 500px;
         height: auto;
         margin: 40px auto;
+        display: block;
         border-radius: 15px;
         transition: box-shadow 0.3s ease, transform 0.3s ease;
     }
