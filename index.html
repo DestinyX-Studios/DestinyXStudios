@@ -119,8 +119,10 @@
                 align-items: center;
             }
             nav ul {
-                flex-direction: column;
-                align-items: center;
+                flex-direction: row;
+                justify-content: center;
+                flex-wrap: nowrap; /* Prevent wrapping */
+                overflow-x: auto; /* Allow horizontal scrolling if needed */
             }
             .tab-content {
                 padding: 20px;
@@ -155,10 +157,14 @@
                 flex-wrap: wrap;
             }
             .tabs li {
-                margin: 5px 0;
+                margin: 0 5px;
+            }
+            .tab-link {
+                padding: 5px;
+                font-size: 0.8em; /* Reduce font size */
             }
             .home-logo {
-                max-width: 300px; /* Reduce size for mobile */
+                max-width: 90%; /* Ensure it fits well on mobile */
             }
         }
 
@@ -223,7 +229,7 @@
         }
 
         .home-logo {
-            max-width: 500px;
+            max-width: 300px; /* Set to the same size as the IdolPulse logo */
             height: auto;
             margin: 40px auto;
             display: block;
@@ -428,7 +434,6 @@
     <script src="scripts.js"></script>
 </body>
 </html>
-
 <style>
     .contact-form {
         max-width: 600px;
@@ -578,7 +583,7 @@
         box-shadow: 0 0 25px rgba(0, 0, 0, 0.8), 0 0 50px rgba(0, 0, 0, 0.5);
     }
     .home-logo {
-        max-width: 500px;
+        max-width: 300px; /* Set to the same size as the IdolPulse logo */
         height: auto;
         margin: 40px auto;
         display: block;
