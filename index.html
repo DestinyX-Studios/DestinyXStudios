@@ -15,12 +15,14 @@
             color: #333;
             background-color: #fff;
             text-align: center;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
         header {
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center; /* Center content */
             padding: 10px 20px;
             position: fixed;
             top: 0;
@@ -28,6 +30,11 @@
             background-color: #fff;
             z-index: 1000;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2em;
         }
 
         .menu-icon {
@@ -39,8 +46,8 @@
 
         nav {
             display: flex;
-            justify-content: center;
-            margin-top: 20px;
+            justify-content: center; /* Center tabs */
+            margin-top: 10px;
             overflow-x: auto;
             white-space: nowrap;
         }
@@ -50,16 +57,16 @@
             justify-content: center;
             padding: 0;
             list-style: none;
-            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+            flex-wrap: nowrap;
         }
 
         nav ul li {
-            margin: 5px 10px;
+            margin: 0 10px;
         }
 
         .tab-content {
             padding: 60px 20px;
-            margin: 40px auto;
+            margin: 0 auto; /* Center content */
             max-width: 900px;
             text-align: center;
             background-color: #fff;
@@ -89,10 +96,10 @@
             gap: 40px;
         }
 
-        .about-text {
+        .about-text, .about-image-container {
             max-width: 400px;
             text-align: left;
-            flex: 1; /* Allow text to take equal space */
+            flex: 1;
         }
 
         .about-image-container {
@@ -114,19 +121,8 @@
 
         /* Mobile Styles */
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: center;
-            }
-            nav ul {
-                flex-direction: row;
-                justify-content: center;
-                flex-wrap: nowrap; /* Prevent wrapping */
-                overflow-x: auto; /* Allow horizontal scrolling if needed */
-            }
             .tab-content {
                 padding: 20px;
-                text-align: center;
             }
             footer {
                 padding: 20px;
@@ -347,8 +343,7 @@
                 <li><a href="#about" class="tab-link">About</a></li>
                 <li><a href="#projects" class="tab-link">Apps</a></li>
                 <li><a href="#games" class="tab-link">Games</a></li>
-                <li><a href="#social" class="tab-link">Socials</a></li>
-                <li><a href="#contact" class="tab-link">Contact</a></li>
+                <li><a href="#social" class="tab-link">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -364,7 +359,7 @@
             <div class="about-section">
                 <div class="about-text">
                     <h3>Who I Am</h3>
-                    <p>Hello! I'm an independent creator with a deep passion for innovation. I was born in Colombia and currently live in Silicon Valley. I've always had a passion for games and apps, which sparked an interest in me to start creating. I've often had ideas or features I wished apps or games had, so I decided to bring those imaginative concepts to life.</p>
+                    <p>Hello! I'm an independent Developer with a deep passion for innovation. I was born in Colombia and currently live in Silicon Valley. I've always had a passion for games and apps, which sparked an interest in me to start creating. I've often had ideas or features I wished apps or games had, so I decided to bring those imaginative concepts to life.</p>
                     <h3>My Focus</h3>
                     <p>My focus is on developing engaging and user-friendly applications that connect people, share moments, and create entertaining experiences.</p>
                     <h3>My Objectives</h3>
