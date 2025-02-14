@@ -8,22 +8,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
-            font-family: 'Quattrocento', serif;
+            font-family: 'Copperplate Gothic', 'Quattrocento', serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
             color: #333;
             background-color: #fff;
+            text-align: center;
         }
 
         header {
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding: 10px 20px;
             position: fixed;
+            top: 0;
             width: 100%;
             background-color: #fff;
             z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .menu-icon {
@@ -39,6 +43,26 @@
             margin-top: 20px;
             overflow-x: auto;
             white-space: nowrap;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            list-style: none;
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        }
+
+        nav ul li {
+            margin: 5px 10px;
+        }
+
+        .tab-content {
+            padding: 60px 20px;
+            margin: 40px auto;
+            max-width: 900px;
+            text-align: center;
+            background-color: #fff;
         }
 
         .tabs {
@@ -67,6 +91,7 @@
             nav ul {
                 flex-direction: row;
                 justify-content: center;
+                flex-wrap: wrap;
             }
             .tab-content {
                 padding: 20px;
@@ -76,6 +101,26 @@
                 padding: 20px;
                 text-align: center;
             }
+            .about-section {
+                flex-direction: column;
+                align-items: center;
+            }
+            .about-text, .about-image-container {
+                max-width: 100%;
+            }
+            .contact-form {
+                padding: 15px;
+            }
+            .input-container input,
+            .input-container textarea {
+                padding: 15px;
+            }
+            .project-logo {
+                max-width: 150px;
+            }
+            .key-points p {
+                font-size: 0.9em;
+            }
         }
 
         footer {
@@ -83,26 +128,39 @@
             flex-direction: column;
             align-items: center;
             background-color: #f1f1f1;
-            padding: 10px;
+            padding: 20px;
             text-align: center;
             width: 100%;
-            position: fixed;
-            bottom: 0;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
         }
 
         footer form {
-            width: 100%;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
         }
 
         footer input[type="email"] {
-            width: 60%;
-            margin-right: 5px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+            max-width: 300px;
         }
 
         footer input[type="submit"] {
-            width: auto;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        footer input[type="submit"]:hover {
+            background-color: #0056b3;
         }
 
         .contact-form input[type="submit"] {
@@ -134,7 +192,7 @@
             <ul class="tabs">
                 <li><a href="#home" class="tab-link active">Home</a></li>
                 <li><a href="#about" class="tab-link">About Us</a></li>
-                <li><a href="#projects" class="tab-link">Projects</a></li>
+                <li><a href="#projects" class="tab-link">Apps</a></li>
                 <li><a href="#games" class="tab-link">Games</a></li>
                 <li><a href="#social" class="tab-link">Social Media</a></li>
                 <li><a href="#contact" class="tab-link">Contact</a></li>
@@ -466,5 +524,4 @@
         opacity: 1;
         transition: 0s;
     }
-</style> 
-</style> 
+</style>
