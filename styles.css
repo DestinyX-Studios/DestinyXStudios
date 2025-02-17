@@ -584,3 +584,70 @@ footer input[type="submit"]:hover {
     z-index: 10;
     resize: none; /* Disable resizing */
 }
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.icon {
+    margin: 10px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 2rem;
+    color: #fff;
+    background-color: #555; /* Gray color */
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.icon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(85, 85, 85, 0.8), 0 0 30px rgba(85, 85, 85, 0.6); /* Gray glow */
+    transition: 0.3s ease;
+    z-index: -1;
+}
+
+.icon:hover {
+    transform: scale(1.2);
+}
+
+.icon:hover::before {
+    box-shadow: 0 0 25px rgba(85, 85, 85, 1), 0 0 50px rgba(85, 85, 85, 0.8); /* Highlighted glow */
+}
+
+.icon.instagram {
+    background-color: #E1306C;
+}
+
+.icon.twitter {
+    background-color: #1DA1F2;
+}
+
+.icon.tiktok {
+    background-color: #000;
+}
+
+.instagram { background: url('path/to/instagram-icon.png') no-repeat center; }
+.twitter { background: url('path/to/twitter-icon.png') no-repeat center; }
+.tiktok { background: url('path/to/tiktok-icon.png') no-repeat center; }
+.whatsapp { background: url('path/to/whatsapp-icon.png') no-repeat center; }
