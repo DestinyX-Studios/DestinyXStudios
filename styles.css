@@ -152,8 +152,9 @@ p {
     transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.project-logo:hover {
-    box-shadow: none; /* Remove shadow to eliminate black bars */
+.project-logo:hover,
+.home-logo:hover {
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.9), 0 0 80px rgba(0, 0, 0, 0.7);
     transform: scale(1.05);
 }
 
@@ -677,3 +678,17 @@ footer form {
 .twitter { background: url('path/to/twitter-icon.png') no-repeat center; }
 .tiktok { background: url('path/to/tiktok-icon.png') no-repeat center; }
 .whatsapp { background: url('path/to/whatsapp-icon.png') no-repeat center; }
+
+.store-badge {
+    width: 140px;
+    height: auto;
+    border-radius: 12px;
+    transition: none; /* Remove transition */
+    box-shadow: none;
+    border: none;
+}
+/* Remove the hover effect */
+.store-badge:hover {
+    box-shadow: none;
+    transform: none;
+}
