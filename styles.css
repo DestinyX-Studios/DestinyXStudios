@@ -166,34 +166,53 @@ footer {
     text-align: center;
     width: 100%;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    color: #000; /* Set text color to black */
+}
+
+.company-info {
+    margin-bottom: 10px;
+    color: #000; /* Ensure text color is black */
+}
+
+footer nav a {
+    color: #000; /* Set link color to black */
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer nav a:hover {
+    text-decoration: underline;
 }
 
 footer form {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     gap: 10px;
+    width: 100%;
+    max-width: 300px;
+    color: #000; /* Ensure text color is black */
 }
 
-footer input[type="email"] {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 200px;
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-footer input[type="submit"] {
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007BFF;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.footer-nav {
+    margin-top: 10px;
 }
 
-footer input[type="submit"]:hover {
-    background-color: #0056b3;
+.footer-nav a {
+    color: #ccc;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: #007BFF;
 }
 
 @media (max-width: 768px) {
@@ -209,9 +228,16 @@ footer input[type="submit"]:hover {
         padding: 20px;
         text-align: center;
     }
-    footer {
-        padding: 20px;
-        text-align: center;
+    .footer-content {
+        padding: 0 10px;
+    }
+    .footer-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-nav a {
+        margin: 5px 0;
     }
     .about-section {
         flex-direction: column;
