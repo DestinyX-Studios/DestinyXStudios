@@ -692,3 +692,24 @@ footer form {
     box-shadow: none;
     transform: none;
 }
+
+.projects-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px; /* space between projects */
+    flex-wrap: wrap; /* responsive for smaller screens */
+}
+
+.project-item {
+    flex: 1 1 300px;
+    max-width: 350px;
+    margin: 20px 0;
+}
+
+@media (max-width: 800px) {
+    .projects-row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
